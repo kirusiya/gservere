@@ -1,0 +1,91 @@
+//
+// Header Customization
+//
+
+// General mode
+.app-header {
+    // General
+    .btn-custom {
+        background: var(--#{$prefix}header-primary-link-bg-color) !important;    
+    }    
+
+    .app-header-secondary {
+        .custom-link {
+            &:hover {
+                background-color: $gray-200-dark;
+            }
+        }
+    } 
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+    .app-header-menu {
+        .menu {
+            > .menu-item {
+                @include menu-link-default-state( 
+                    $title-color: var(--#{$prefix}header-primary-link-color), 
+                    $icon-color: null, 
+                    $bullet-color: null, 
+                    $arrow-color: null,
+                    $bg-color: null,
+                    $all-links: false
+                );
+                
+                @include menu-link-hover-state( 
+                    $title-color: var(--#{$prefix}white), 
+                    $icon-color: null, 
+                    $bullet-color: null, 
+                    $arrow-color: null, 
+                    $bg-color: var(--#{$prefix}header-primary-link-bg-color),
+                    $all-links: false
+                );
+                
+                @include menu-link-show-state( 
+                    $title-color: var(--#{$prefix}white), 
+                    $icon-color: null, 
+                    $bullet-color: null, 
+                    $arrow-color: null, 
+                    $bg-color: null,
+                    $all-links: false
+                );
+    
+                @include menu-link-here-state( 
+                    $title-color: var(--#{$prefix}white), 
+                    $icon-color: null,
+                    $bullet-color: null, 
+                    $arrow-color: null,
+                    $bg-color: var(--#{$prefix}header-primary-link-bg-color),
+                    $all-links: false
+                );
+    
+                @include menu-link-active-state( 
+                    $title-color: var(--#{$prefix}white), 
+                    $icon-color: null, 
+                    $bullet-color: null, 
+                    $arrow-color: null, 
+                    $bg-color: var(--#{$prefix}header-primary-link-bg-color),
+                    $all-links: false
+                ); 
+                
+                margin-right: 0.5rem;   
+            }         
+        }        
+    } 
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+    .app-header {
+        .header-nav {
+            display: none !important;
+        }
+    } 
+
+    .app-header-secondary {
+        .custom-link {
+            width: 32px;
+            height: 32px;
+        }
+    } 
+}

@@ -1,0 +1,67 @@
+//
+// Custom Variables
+//
+
+// Reboot
+$app-bg-color: #F2F5F9;
+$app-bg-color-dark: $coal-400;
+$app-blank-bg-color: $app-bg-color;
+$app-blank-bg-color-dark: $app-bg-color-dark;
+
+// General
+$app-general-root-font-size-desktop: 13px;
+$app-general-root-font-size-tablet: 12px;
+$app-general-root-font-size-mobile: 12px;
+
+// Header
+$app-header-base-height-mobile: 110px;
+
+// Header sticky
+$app-header-sticky-bg-color: $body-bg;
+$app-header-sticky-bg-color-dark: $body-bg-dark;
+
+
+// Header primary
+$app-header-primary-base-height: 80px;
+$app-header-primary-base-height-mobile: 60px;
+$app-header-primary-base-bg-color: $coal-100;
+$app-header-primary-base-bg-color-dark: $app-header-primary-base-bg-color;
+$app-header-primary-base-link-bg-color: $gray-200-dark;
+$app-header-primary-base-link-bg-color-dark: $gray-200-dark;
+$app-header-primary-base-link-color: #A7A9B4;
+$app-header-primary-base-link-color-dark: #A7A9B4;
+$app-header-primary-base-custom-btn-color: #2D3145;
+$app-header-primary-base-custom-btn-color-dark: #2D3145;
+
+// Header primary sticky
+$app-header-primary-sticky-height: 70px;
+$app-header-primary-sticky-height-mobile: 60px;
+$app-header-primary-sticky-bg-color: $coal-100;
+$app-header-primary-sticky-bg-color-dark: $coal-100;
+
+// Header secondary
+$app-header-secondary-base-height: 68px;
+$app-header-secondary-base-height-mobile: 60px;
+$app-header-secondary-base-bg-color: $app-header-primary-base-bg-color;
+$app-header-secondary-base-bg-color-dark: $app-header-primary-base-bg-color;
+$app-header-secondary-base-border-top: 1px solid $gray-200-dark;
+$app-header-secondary-base-border-top-dark: 1px solid $gray-200-dark;
+ 
+// Sidebar
+$app-sidebar-base-width: 250px;
+$app-sidebar-base-width-mobile: 250px; 
+$app-sidebar-base-gap-end: 30px;
+$app-sidebar-base-gap-top: 30px;
+$app-sidebar-base-gap-bottom: 30px;
+
+$app-sidebar-sticky-gap-end: 30px;
+$app-sidebar-sticky-gap-top: 30px;
+$app-sidebar-sticky-gap-bottom: 30px;
+
+// Content
+$app-content-padding-bottom: 0;
+$app-content-padding-bottom-mobile: 0;
+
+// Footer
+$app-footer-height: auto;
+$app-footer-height-mobile: auto;
