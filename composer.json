@@ -1,0 +1,14 @@
+{
+	"description": "Marketing Multi Nível",
+	"name": "alissonacioli/mmn",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.3.7",
+		"needim/noty": "^3.1",
+		"sonata-project/google-authenticator": "^2.3",
+		"pragmarx/google2fa-qrcode": "^3.0",
+		"chillerlan/php-qrcode": "^4.3",
+		"bacon/bacon-qr-code": "^2.0"
+	}
+}
