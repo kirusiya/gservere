@@ -1,0 +1,423 @@
+@font-face {
+  font-family: 'Astrolab';
+  src: url('../fonts/astrolab.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/astrolab.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/astrolab.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/astrolab.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/astrolab.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/astrolab.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+
+
+
+.rd-navbar-fixed .rd-navbar-brand {
+    width: auto;
+}
+
+.rd-navbar-fixed .rd-navbar-nav li > a {
+    font-family: 'Astrolab';
+    font-size: 10px;
+	letter-spacing: 1px;
+}
+
+.rd-navbar-static .rd-navbar-nav > li > a {
+    font-family: 'Astrolab';
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.rd-navbar-static .rd-navbar-dropdown li > a {
+    font-family: 'Astrolab';
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 16px;
+}
+
+.rd-navbar-static .rd-navbar-dropdown {
+    background: -webkit-gradient(linear, left top, right top, from(#5e0a2e), to(#02121f));
+	background: -moz-gradient(linear, left top, right top, from(#5e0a2e), to(#02121f));
+	background: -ms-gradient(linear, left top, right top, from(#5e0a2e), to(#02121f));
+	background: -o-gradient(linear, left top, right top, from(#5e0a2e), to(#02121f));
+    background: linear-gradient(to right, #5e0a2e, #02121f);
+}
+
+li.rd-navbar--has-dropdown.rd-navbar-submenu a .fa-solid {
+    font-size: 16px;
+}
+
+.rd-navbar-static .rd-navbar-brand {
+    width: 80px;
+}
+
+.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-brand {
+    padding: 7px;
+	padding-right: 20px;
+}
+
+.rd-navbar-static .rd-navbar-dropdown li > a {
+    color: #fff;
+}
+
+.rd-navbar-static .rd-navbar-dropdown li > a:hover {
+    color: #ff6e00;
+}
+
+.criptoPrice {
+    block-size: auto !important;
+}
+
+.jOrgChart .node {
+    background-color: transparent !important;
+}
+
+
+.orgChart tr {
+    background: transparent !important;
+    border-top: 0 !important;
+}
+
+.orgChart tr:hover {
+    background: transparent !important;
+}
+
+
+.orgChart .jOrgChart table {
+    width: 100%;
+}
+
+.orgChart .jOrgChart table tr:hover, 
+.orgChart .jOrgChart table tr:hover tbody {
+    color: white;
+    background-color: transparent !important;
+}
+
+.jOrgChart .left {
+    border-right: 2px solid #fff;
+}
+
+.jOrgChart .right {
+    border-left: 2px solid #fff;
+}
+
+.jOrgChart .top {
+    border-top: 2px solid #fff;
+}
+
+.jOrgChart .down {
+    background-color: #fff;
+}
+
+.orgChart .jOrgChart font.color-red {
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-weight: 600;
+}
+
+
+.tooltipster-sidetip .tooltipster-box {
+    border: 2px solid #ff6e00;
+    border-radius: 10px;
+    background: -webkit-gradient(linear, left top, right top, from(#bd2625), to(#080c29));
+    background: -moz-gradient(linear, left top, right top, from(#bd2625), to(#080c29));
+    background: -ms-gradient(linear, left top, right top, from(#bd2625), to(#080c29));
+    background: -o-gradient(linear, left top, right top, from(#bd2625), to(#080c29));
+    background: linear-gradient(to right, #bd2625, #080c29);
+}
+
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+    border-top-color: #400d29;
+}
+
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+    border-top-color: #ff6e00;
+}
+
+img.imgPlanes {
+    width: 150px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+img.markImg {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+table.marketTable tr th, table.marketTable tr td {
+    text-align: center !important;
+}
+
+table.marketTable tr th:first-child, table.marketTable tr td:first-child {
+    text-align: left !important;
+	min-width: 150px !important;
+}
+
+i.flechasMarket{
+	margin-right: 10px; 
+}
+
+span.txtMarkGreen{
+	color: green;
+}
+
+span.txtMarkRed{
+	color: red; 
+}
+
+table.marketTable tr td.txtMarkGreen {
+    color: green;
+}
+
+.copyLinkHome{
+	margin-top: 0;
+}
+
+span#closeNoti i {
+    color: #740028;
+}
+
+span#closeNoti:hover i {
+    opacity: 0.7;
+}
+
+span#closeNoti {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#notiSystem small {
+    color: #979998;
+    font-weight: 700;
+    font-style: italic;
+}
+
+table.marketTable tr td.txtMarkRed {
+    color: red;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    padding: 3px 6px;
+    margin: 0 5px;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+            top: 50%;
+            left: 5px;
+            height: 1em;
+            width: 1em;
+            margin-top: -9px;
+            display: block;
+            position: absolute;
+            color: white;
+            border: 0.15em solid white;
+            border-radius: 1em;
+            box-shadow: 0 0 0.2em #444;
+            box-sizing: content-box;
+            text-align: center;
+            text-indent: 0 !important;
+            font-family: "Courier New", Courier, monospace;
+            line-height: 1em;
+            content: "+";
+            background-color: #6610f2 !important;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+            color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+            box-sizing: border-box;
+            display: inline-block;
+            min-width: 1.5em;
+            padding: 0.5em 1em;
+            margin-left: 2px;
+            text-align: center;
+            text-decoration: none !important;
+            cursor: pointer;
+            color: white !important;
+            border: 1px solid transparent;
+            border-radius: 2px;
+}
+
+img.imgNotificaciones {
+    display: block;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    max-height: 125px;
+}
+
+input#fake {
+    background-color: transparent !important;
+    border-bottom: 2px solid #ff6e00;
+    color: white;
+}
+
+select{
+	-webkit-appearance: auto !important;
+	-moz-appearance: auto !important;
+	-ms-appearance: auto !important;
+	-o-appearance: auto !important;
+    appearance: auto !important;
+}
+
+option {
+    background: #000;
+    color: #fff;
+}
+
+td#comprobanteInvoice {
+    word-break: break-all !important;
+}
+
+td#comprobanteInvoice a:hover {
+    opacity: 0.8;
+}
+td#comprobanteInvoice a {
+    text-decoration: none;
+    color: #ff6e00;
+}
+
+.marketTable tr.colorido {
+    background: -webkit-gradient(linear, left top, right top, from(#bd2625), to(#662f8e)) !important;
+    background: -moz-gradient(linear, left top, right top, from(#bd2625), to(#662f8e)) !important;
+    background: -ms-gradient(linear, left top, right top, from(#bd2625), to(#662f8e)) !important;
+    background: -o-gradient(linear, left top, right top, from(#bd2625), to(#662f8e)) !important;
+    background: linear-gradient(to right, #bd2625, #662f8e) !important;
+}
+
+.purchaseSucess .alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.purchaseSucess .close {
+    float: right;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+
+table span.text-danger {
+    font-weight: 700;
+}
+
+table span.text-success {
+    color: #faaa1b !important;
+    font-weight: 700;
+}
+
+
+select.form-control:valid, select.form-control:focus {
+    padding-bottom: 8px;
+    padding-top: 7px;
+}
+
+.form-control[type="file"]:not(:disabled):not([readonly]) {
+    cursor: pointer;
+    border-bottom: 2px solid #ff6e00;
+    color: white;
+    background: transparent;
+}
+
+.qrImage img {
+    border-radius: 25px;
+}
+
+.qrImage img {
+    border-radius: 25px;
+    max-width: 50%;
+}
+
+.formInputs label {
+    margin-bottom: 10px;
+    color: #ff6e00;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #662f8e;
+    opacity: 1;
+    border-bottom: 2px solid #ff6e00;
+}
+
+#login img {
+    max-height: 150px;
+    width: auto;
+}
+
+
+select#googleTrans {
+    padding: 3px 5px;
+}
+
+select#googleTrans option[value="en"]{ 
+	background-image:url(https://dashboard.smartglobalinvest.net/assets/imgs/flags/united_kingdom.png);   
+}
+
+
+
+
+@media only screen and (max-width : 979px){
+
+}
+
+@media only screen and (max-width : 767px){
+	
+	.copyLinkHome{
+		margin-top: 20px;
+	}
+	
+	img.imgNotificaciones {
+		max-height: 100px;
+	}
+	
+	.qrImage img {
+		max-width: 60%;
+	}
+}
+
+@media only screen and (max-width : 561px){
+
+	img.imgNotificaciones {
+		max-height: 150px;
+	}
+	
+	.qrImage img {
+		max-width: 90%;
+	}
+	
+}
+
+@media only screen and (max-width : 480px){
+
+	img.imgNotificaciones {
+		max-height: 150px;
+	}
+	
+	
+}
+
+@media only screen and (max-width : 320px){
+
+}
+

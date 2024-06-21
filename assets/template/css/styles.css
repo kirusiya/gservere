@@ -1,0 +1,598 @@
+@charset "UTF-8";
+/* .row>*, .form-row>*{
+    border: 1px solid black;
+} */
+/*-----------------------------------------
+1.Tipografia del sitio
+----------------------------------------*/
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: "Kaushan Script", cursive;
+  color: #6058d3;
+}
+
+label {
+  color: #35363c;
+}
+
+/*-----------------------------------------
+2.Estilos generales de botones
+----------------------------------------*/
+.btn {
+  border-radius: 2rem;
+  padding: 0.6rem 2rem;
+  font-weight: bold;
+}
+
+/*-----------------------------------------
+3.estilos color principal
+----------------------------------------*/
+.bg-primary {
+  background-color: #4e4ef0 !important;
+}
+
+.text-primary {
+  color: #4e4ef0 !important;
+}
+
+.letra {
+  font-family: "Kaushan Script", cursive;
+}
+
+/* Estilos .btn-primary */
+.btn-primary {
+  color: #fff;
+  background-color: #4e4ef0;
+  border-color: #4e4ef0;
+  position: relative;
+  overflow: hidden;
+  /* lo encuadra lo que esta alrededor */
+  z-index: 1;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.btn-primary:hover {
+  color: #35363c;
+  background-color: white;
+  border-color: #4e4ef0;
+}
+
+.btn-primary:active {
+  color: #35363c !important;
+  background-color: #6666f2 !important;
+  border-color: #7474f3 !important;
+}
+
+.btn-primary:focus {
+  color: #35363c;
+  background-color: #4e4ef0;
+  border-color: #6666f2;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(78, 78, 240, 0.5) !important;
+          box-shadow: 0 0 0 0.2rem rgba(78, 78, 240, 0.5) !important;
+  /* importan para que se inponga cuando sea focus y active  */
+}
+
+/* insertamos la flecha del boton principal */
+.btn-primary::after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\f138";
+  position: relative;
+  left: 0.7rem;
+  top: 0.05rem;
+  -webkit-transition: left 0.3s ease;
+  transition: left 0.3s ease;
+}
+
+.btn-primary:hover:after,
+.btn-primary:active:after,
+.btn-primary:focus:after {
+  left: 0.25rem;
+}
+
+/* insertamos la caja blanca del boton principal */
+.btn-primary::before {
+  content: "";
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: skew(45deg, 0);
+          transform: skew(45deg, 0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover:before,
+.btn-primary:focus:before,
+.btn-primary:active:before {
+  width: 130%;
+  left: -15%;
+}
+
+/*-----------------------------------------
+4.Estilos para el color secundario
+----------------------------------------*/
+.bg-secondary {
+  background-color: #35363c !important;
+}
+
+.text-secondary {
+  color: #35363c !important;
+}
+
+/*-----------------------------------------
+5.Estilos a la seccion redes sociales
+----------------------------------------*/
+.redes-sociales li a i {
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.6rem 1rem;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.redes-sociales li a i:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.3) rotate(360deg);
+          transform: scale(1.3) rotate(360deg);
+  /* aumenta el tamaño y le da vuelta*/
+}
+
+/*-----------------------------------------
+6.Estilos para el nav menu-navegacion
+----------------------------------------*/
+#menu-nav .navbar-toggler {
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  /* le quitamos el marjen al boton */
+}
+
+#menu-nav .boton-menu::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f0c9";
+  font-weight: 900;
+  font-size: 2rem;
+  color: white;
+}
+
+#menu-nav .icono-cerrar::before {
+  content: "\f00d";
+  position: relative;
+  left: 0.2rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  padding: 1rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f105";
+  font-weight: 900;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: #4d4e57;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover:after {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f105";
+  font-weight: 900;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+/* estilos pra el enlace activo */
+.navbar-dark .navbar-nav .nav-link.active {
+  background-color: #4e4ef0;
+}
+
+.menu-fijo {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #050506 !important;
+  width: 100% !important;
+}
+
+/*-----------------------------------------
+7.Estilos para la animacion
+----------------------------------------*/
+.swiper-slide {
+  height: 34rem;
+  /* equivale a 450px */
+  text-align: center;
+  color: white;
+  background-size: cover;
+  /* hace que la imagen se muestre completa */
+  background-position: center;
+}
+
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.4;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 3rem;
+  height: 3rem;
+  color: white;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  outline: 0;
+}
+
+.swiper-button-prev::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f060";
+  font-weight: 900;
+}
+
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-button-next::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f061";
+  font-weight: 900;
+}
+
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #4e4ef0;
+}
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.6rem !important;
+  outline: 0;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #4e4ef0;
+}
+
+/*-----------------------------------------
+8.Estilos para la seccion bienvenidos
+----------------------------------------*/
+.contenedor-video a {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 7rem;
+  height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50%;
+  color: #4e4ef0;
+  font-size: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-clip: padding-box;
+  /* asemos que el border creado no se una con el color de fondo y con padding se aleja del color */
+  border: 0 solid transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.contenedor-video a:hover {
+  background-color: #4e4ef0;
+  color: white;
+  border: 0.8rem solid rgba(255, 255, 255, 0.5);
+}
+
+/* // bootstrap usa text-truncate para hacer lo mismo
+.contenedor-video{
+    overflow: hidden;
+} */
+.contenedor-video img {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.contenedor-video:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/*-----------------------------------------
+9.Estilos para la seccion te ayudamos
+----------------------------------------*/
+#te-ayudamos {
+  position: relative;
+  -webkit-transform: skew(0, 6deg);
+          transform: skew(0, 6deg);
+}
+
+#te-ayudamos::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#te-ayudamos .container {
+  -webkit-transform: skew(0, -6deg);
+          transform: skew(0, -6deg);
+}
+
+.jarallax {
+  position: relative;
+  z-index: 0;
+}
+
+.jarallax > .jarallax-img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* support for plugin https://github.com/bfred-it/object-fit-images */
+  font-family: "object-fit: cover;";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/*-----------------------------------------
+10.Estilos para la seccion premios
+----------------------------------------*/
+.contador-linea {
+  background-color: #4e4ef0;
+  width: 4rem;
+  height: 0.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#premios .col-6:hover .contador-linea {
+  bottom: 1rem;
+  -webkit-transform: rotate(180deg) translateX(50%);
+          transform: rotate(180deg) translateX(50%);
+  background-color: #35363c;
+}
+
+#premios h6 {
+  color: #35363c;
+}
+
+/*-----------------------------------------
+11.Estilos para la seccion nuestra-app
+----------------------------------------*/
+#nuestra-app::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/*-----------------------------------------
+12.Estilos para la seccion contacto
+----------------------------------------*/
+#contacto .detalle-rectangulo {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: #4e4ef0;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 50%) rotate(45deg);
+          transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.label-cita {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.picker__box {
+  border: 3px solid rgba(78, 78, 240, 0.8);
+}
+
+.picker--focused .picker__day--selected,
+.picker__day--selected,
+.picker__day--selected:hover {
+  background: #4e4ef0;
+}
+
+.picker__day--today:before {
+  border-top: 0.5em solid #ffffff;
+}
+
+.picker__select--month,
+.picker__select--year {
+  margin-top: -0.5em;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.picker__select--month {
+  font-size: 0.7em;
+}
+
+.picker__day {
+  font-size: 1em;
+}
+
+.picker--focused .picker__list-item--selected,
+.picker__list-item--selected,
+.picker__list-item--selected:hover {
+  background: #4e4ef0;
+}
+
+.picker__list-item--highlighted,
+.picker__list-item:hover {
+  border-color: #1f1fec;
+}
+
+.picker__list {
+  padding: 0.5rem 0;
+}
+
+.picker--time .picker__button--clear {
+  color: white;
+  background: #e43b3b;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.picker--time .picker__button--clear:hover {
+  background: #cc0000;
+}
+
+.picker__button--clear:before {
+  width: 0;
+  border-top: 0 solid #e20;
+  display: none;
+}
+
+/*-----------------------------------------
+13.Estilos para pie de pagina
+----------------------------------------*/
+.columna-inclinada::before {
+  content: "";
+  position: absolute;
+  background: #4e4ef0;
+  left: -100%;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+}
+
+.enlaces-secundario {
+  border-bottom: 0.1px solid #5d666f;
+  -webkit-box-shadow: 0 1px #212529;
+          box-shadow: 0 1px #212529;
+}
+
+.enlaces-secundario a {
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/*-----------------------------------------
+13.Estilos para soporte explorer
+----------------------------------------*/
+.ie11 #bienvenidos .contenedor-video img {
+  width: 100%;
+}
+
+/* Empieza el show de las medias querys */
+@media (min-width: 0px) and (max-width: 578px) {
+  .display-4 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-dark .navbar-nav .nav-link::after {
+    content: "";
+  }
+  .navbar-dark .navbar-nav .nav-link:hover:after {
+    content: "";
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    padding: 0.7rem 1.2rem;
+    border-radius: 1.5rem;
+  }
+  #te-ayudamos {
+    -webkit-transform: skew(0, 3deg);
+            transform: skew(0, 3deg);
+  }
+  #te-ayudamos .container {
+    -webkit-transform: skew(0, -3deg);
+            transform: skew(0, -3deg);
+  }
+  .columna-inclinada::before {
+    left: -300%;
+    right: 0;
+    -webkit-transform: skewX(20deg);
+            transform: skewX(20deg);
+  }
+}
+
+@media (min-width: 990px) {
+  html {
+    font-size: 16px;
+  }
+  .swiper-slide {
+    height: 37.5rem;
+    /* 600 px */
+  }
+}
+
+@media (min-width: 1200px) {
+  .swiper-slide {
+    height: 44rem;
+    /* 600 px */
+  }
+  .ie11 #animacion .col-9 {
+    -webkit-transform: translate(-40%, 0%);
+            transform: translate(-40%, 0%);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

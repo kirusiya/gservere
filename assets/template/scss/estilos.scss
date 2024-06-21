@@ -1,0 +1,1278 @@
+/* .row > * {
+  border: 1px solid red;
+} */
+
+// Definimos las variables que queremos modificar antes de llamar al bootstrap
+
+/* ---------------
+* 1.- Patron de colores
+---------------- */
+
+$principal: #186adc;
+$secondary: #303036;
+$gradient1: #662f8e;
+$gradient2: #15152f;
+$brillante: #ff6e00;
+$brillante2: #e67d2d;
+$buttongradiante1: #fe7414;
+$buttongradiante2: #fe3111;
+$badgeGradiante1:#662f8e;
+$badgeGradiante2:#33b7ea;
+$text-primary: #303036;
+$text-secondary: #63636b;
+$primary-color: #ffffff;
+$bg-color: #f0f4f8;
+
+// * Modificando variables de bootstrap
+
+// $primary: $principal;
+// $enable-shadows: true;
+// $enable-gradients: true;
+$body-color: $text-primary;
+$font-family-base: "Montserrat", sans-serif;
+
+$primary: $principal;
+$secondary: $secondary;
+$light: $bg-color;
+$warning: $brillante;
+$dark: $text-secondary;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) !default;
+
+$display-font-sizes: (
+  0: 9rem,
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem,
+) !default;
+
+// $btn-padding-y: 0.8rem;
+// $btn-padding-x: 1.5rem;
+// $btn-border-radius: 1rem;
+
+@import "../libs/bootstrap/scss/bootstrap";
+
+// * Aqui ponemos las modificaciones personalizadas
+
+// .btn-primary {
+//   border-bottom: 3px solid rgba(0, 0, 0, 0.27);
+// }
+
+body{
+  background: url('../images/back-desktop.jpg') center center / cover;
+  background-attachment: fixed;
+  color: $primary-color;
+}
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.4rem;
+  font-size: 0.87rem;
+  border: none;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, $gradient1 0%, $gradient2 100%);
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+.btn-secondary {
+  background: transparent;
+  color: $text-primary;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.4s ease;
+}
+.btn-secondary:hover {
+  background: none;
+  // color: red;
+}
+
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $secondary;
+  border-radius: 0.4rem;
+}
+
+.btn.btn-primary .expansor {
+  background: $gradient1;
+}
+
+.btn:hover .expansor {
+  width: calc(100% * 2);
+  padding-top: calc(100% * 2);
+}
+
+.btn .expansor {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: $secondary;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, padding-top 0.4s;
+  z-index: -1;
+  color: blue;
+}
+
+/* ------------------------
+* Estilos del encabezado y rd navbar
+---------------------------*/
+
+// * Estilos para el top panel
+
+// .encabezado ul li i {
+//   padding-right: 1rem;
+// }
+
+//* caja de busqueda
+.bloque-buscar {
+  .form-control:focus {
+    box-shadow: none;
+    border-color: $principal;
+  }
+  .btnBuscar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    padding: 0.5rem;
+    border: 0;
+  }
+}
+
+.rd-navbar-wrap .rd-navbar--is-stuck .rd-navbar-outer {
+  padding: 0;
+  /*box-shadow: 0px 0px 14px 0px rgba(77, 82, 94, 0.15);*/
+}
+
+// Estilos para el buscador en pantalla expandida
+.form-control:focus {
+  box-shadow: none;
+  border-color: $principal;
+}
+.form-control {
+  background-color: $primary-color;
+}
+.rd-navbar-static .rd-navbar-search form input {
+  background: $primary-color;
+  color: $text-primary;
+  height: 38px;
+  font-size: 1rem;
+}
+.rd-navbar-static .rd-navbar-search form button[type="submit"] {
+  border: none;
+  background: transparent;
+  top: 10px;
+  transition: all .3s ease;
+  color: $brillante;
+}
+.rd-navbar-static .rd-navbar-search form button[type="submit"]:hover {
+  color: $brillante;
+}
+
+/*-----------------------------------
+ //* iconos mdi acoplados para bootstrap configuracion
+ -----------------------------------*/
+.mdi::before {
+  font-size: 24px;
+  line-height: 14px;
+}
+.btn .mdi::before {
+  position: relative;
+  font-size: 20px;
+  top: 2px;
+}
+.btn-xs .mdi::before {
+  font-size: 18px;
+  top: 3px;
+}
+.btn-sm .mdi::before {
+  font-size: 18px;
+  top: 3px;
+}
+.dropdown-menu .mdi {
+  width: 18px;
+}
+.dropdown-menu .mdi::before {
+  position: relative;
+  top: 4px;
+  left: -8px;
+}
+.nav .mdi::before {
+  position: relative;
+  top: 4px;
+}
+.navbar .navbar-toggle .mdi::before {
+  position: relative;
+  top: 4px;
+  color: #fff;
+}
+.breadcrumb .mdi::before {
+  position: relative;
+  top: 4px;
+}
+.breadcrumb a:hover {
+  text-decoration: none;
+}
+.breadcrumb a:hover span {
+  text-decoration: underline;
+}
+.alert .mdi::before {
+  position: relative;
+  top: 4px;
+  margin-right: 2px;
+}
+ul li .mdi::before {
+  position: relative;
+  top: 4px;
+  margin-right: 2px;
+}
+.input-group-addon .mdi::before {
+  position: relative;
+  top: 3px;
+}
+.navbar-brand .mdi::before {
+  position: relative;
+  top: 2px;
+  margin-right: 2px;
+}
+.list-group-item .mdi::before {
+  position: relative;
+  top: 3px;
+  left: -3px;
+}
+
+/*---------------------------------------------
+//* estilos para el rd navbar 
+------------------------------------------*/
+
+// * estilos de los iconos desplegables
+.rd-navbar-fixed .rd-navbar-collapse-toggle span:before {
+  content: "\F01D9";
+  font-family: "Material Design Icons";
+}
+.rd-navbar-fixed .rd-navbar-collapse-toggle span::after {
+  content: "\F0CE2";
+  font-family: "Material Design Icons";
+}
+.rd-navbar-fixed .rd-navbar-search-toggle span:before {
+  content: "\F0349";
+  font-family: "Material Design Icons";
+}
+.rd-navbar-fixed .rd-navbar-search-toggle span::after {
+  content: "\F0156";
+  font-family: "Material Design Icons";
+}
+
+.rd-navbar-fixed .rd-navbar-search-toggle span, .rd-navbar-fixed .rd-navbar-collapse-toggle span{
+  color: white;
+}
+
+.rd-navbar-fixed .rd-navbar-search .form-group{
+  background: #010203;
+}
+
+.slider {
+  min-height: 100vh;
+  background: no-repeat url("/images/slide-img1.jpg") center center / cover;
+}
+
+// dejar fijo el logo
+/* .rd-navbar-fixed .encabezado {
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+} */
+.rd-navbar-fixed .rd-navbar-toggle,
+.rd-navbar-fixed .rd-navbar-collapse-toggle,
+.rd-navbar-fixed .rd-navbar-search-toggle {
+  background: transparent;
+  border: none;
+}
+
+// color del menu hamburguesa
+.rd-navbar-fixed .rd-navbar-toggle span {
+  color: $text-primary;
+}
+.rd-navbar-fixed .rd-navbar-toggle span:after, .rd-navbar-fixed .rd-navbar-toggle span:before, .rd-navbar-fixed .rd-navbar-toggle span{
+  background-color: white;
+}
+
+//* estilos del desplegable menu movil
+
+
+.rd-navbar-fixed .rd-navbar-panel-canvas{
+  background: #010203;
+
+}
+
+
+
+.rd-navbar-fixed .rd-navbar-nav-wrap {
+  background: url('../images/back_principal.png') center center / cover;
+  min-width: 40vh;
+}
+/* .rd-navbar-fixed .rd-navbar-nav li > a {
+  padding: 1rem;
+  font-size: 18px !important;
+} */
+
+
+// Seccion de form
+.rd-navbar-fixed .rd-navbar-nav li > a {
+  background: #010203;
+  color: white;
+  text-decoration: none;
+}
+.rd-navbar-fixed .rd-navbar-nav li:hover > a {
+  background: lighten($color: $brillante, $amount: .1);
+  color: white;
+  text-decoration: none;
+}
+.rd-navbar-fixed .rd-navbar-nav li {
+  margin-bottom: 0.2rem;
+}
+
+.rd-navbar-fixed .rd-navbar-nav li.active > a {
+  background: lighten($color: $brillante, $amount: .1) !important;
+}
+.rd-navbar-fixed .rd-navbar-nav li.opened > a {
+  background: lighten($color: $brillante, $amount: .1) !important;
+  color: white;
+}
+
+// Estilos para el submenu
+.rd-navbar-fixed .rd-navbar-submenu-toggle {
+  border-left: 0.1rem solid $primary-color;
+  color: white;
+}
+.rd-navbar-fixed .rd-navbar-submenu-toggle::before {
+  content: "\F0140";
+  font-family: "Material Design Icons";
+  transition: all 0.3s ease;
+}
+.rd-navbar-fixed .opened .rd-navbar-submenu-toggle::before,
+.rd-navbar-fixed .twodrop .opened .rd-navbar-submenu-toggle::before {
+  transform: rotate(180deg) translateY(50%);
+  color: $primary-color;
+}
+
+.rd-navbar-fixed .twodrop .rd-navbar-submenu-toggle::before {
+  content: "\F0140";
+  font-family: "Material Design Icons";
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.rd-navbar-fixed .rd-navbar-submenu-toggle:hover,
+.rd-navbar-fixed .twodrop .rd-navbar-submenu-toggle:hover {
+  color: white !important;
+}
+
+.rd-navbar-static .rd-navbar-dropdown {
+  z-index: 20 !important;
+}
+
+.rd-navbar-fixed .rd-navbar-submenu {
+  background: #010203;
+}
+
+.rd-navbar-fixed .rd-navbar-submenu li > a {
+  background: #010203;
+  color: white;
+}
+
+/* -----------------------
+*Estilos para el menu en la vista desktop 
+-------------------------*/
+
+.rd-navbar-static .rd-navbar-nav > li.focus > a {
+  color: $brillante;
+}
+.rd-navbar-static .rd-navbar-nav > li > a {
+  font-weight: normal;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.8rem 1rem;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $brillante;
+  }
+}
+
+// cuando se hace focus al enlace
+.rd-navbar-static .rd-navbar-nav > li.focus > a::after {
+  content: "\F0140";
+  font-family: "Material Design Icons";
+  color: $brillante;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  transition: all 0.3s ease;
+}
+
+.rd-navbar-static .rd-navbar-dropdown {
+  background: linear-gradient(to right, #5e0a2e, $gradient1);
+  box-shadow: 2px 4px 20px 1px rgba(45, 45, 45, 0.13);
+}
+
+.rd-navbar-static .rd-navbar-nav > li > .rd-navbar-dropdown {
+  margin-left: -50px;
+}
+
+/* .rd-navbar-static .rd-navbar-nav > li > .rd-navbar-dropdown::before {
+  content: "";
+  position: absolute;
+  background: $text-primary;
+  width: 0.8rem;
+  height: 0.8rem;
+  left: 25%;
+  top: 0;
+  transform: rotate(45deg) translateY(-8px);
+} */
+
+.rd-navbar-static .rd-navbar-dropdown li > a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    background: none;
+    color: $brillante;
+  }
+}
+.rd-navbar-static .rd-navbar-dropdown li.focus > a {
+  background: $bg-color;
+  color: $principal;
+  transition: all 0.3s ease;
+}
+.rd-navbar-static .rd-navbar-dropdown li.focus > a::after {
+  content: "\F0140";
+  font-family: "Material Design Icons";
+  padding: 0 0.3rem;
+  color: $principal;
+}
+
+//  *estilos del top panel
+
+.rd-navbar {
+  background-color: transparent !important;
+}
+
+// encabezado del menu
+.encabezado {
+  background: linear-gradient(90deg, rgba(2,48,77,1) 0%, rgba(2,9,30,1) 19%, rgba(114,6,44,1) 50%, rgba(2,9,30,1) 86%, rgba(2,48,77,1) 100%);
+}
+.rd-navbar-outer {
+  background: linear-gradient(90deg, rgba(2,48,77,1) 0%, rgba(2,9,30,1) 19%, rgba(114,6,44,1) 50%, rgba(2,9,30,1) 86%, rgba(2,48,77,1) 100%);
+  padding: 10px 0;
+  transition: all 0.4s ease;
+}
+
+
+
+.rd-navbar-static .rd-navbar-collapse {
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 10px 8px;
+  z-index: 15;
+  // background-color: $primary;
+  color: $primary-color;
+}
+
+.rd-navbar-static .rd-navbar-menu-wrap {
+  float: right;
+}
+.rd-navbar-static .rd-navbar-brand {
+  float: left;
+}
+
+.rd-navbar-fixed .rd-navbar-collapse {
+  margin: 56px 0px;
+  padding: 8px;
+  min-width: 40vh;
+}
+.rd-navbar-fixed .rd-navbar-collapse.active:before {
+  transform: scale(14);
+}
+
+
+
+
+
+// Seccion de la portada
+.divider{
+  width: 100%;
+  height: 3px;
+  background: $brillante;
+  box-shadow: 0px 0px 40px $brillante;
+}
+.header-portada{
+  
+  height: 86vh;
+  width: 100%;
+
+}
+
+
+@media (max-width: 990px) {
+  .header-portada{
+    height: 96vh;
+  }
+}
+@media (min-width: 990px) {
+  
+  /*.rd-navbar-wrap .rd-navbar--is-stuck .rd-navbar-outer::before{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: $brillante;
+    position: absolute;
+    color: #ff6e00;
+    bottom: -3px;
+    box-shadow: 0px 0px 30px $brillante;
+  }*/
+  .header-portada-tablas{
+    height: 86vh;
+  }
+}
+
+
+/*---------------------------------
+//  * Seccion de Saque
+-----------------------------------*/
+.content{
+  background: rgba(0, 0, 0, .5) !important;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.content::before{
+
+  content: '';
+  position: absolute;
+  margin: auto;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient($gradient1, #bd2625);
+  animation: animate 4s linear infinite;
+}
+.content::after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: black;
+  border-radius: 16px;
+}
+
+.detalle{
+  z-index: 5;
+}
+
+@keyframes animate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+// .content span{
+//   position: absolute;
+// }
+// .content span:nth-child(1){
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 3px;
+//   background:linear-gradient(to right, #0c002b, #1779ff);
+// }
+// .content span:nth-child(2){
+//   right: 0;
+//   bottom: 0;
+//   width:3px;
+//   height: 100%;
+//   background:linear-gradient(to bottom, #0c002b, #1779ff);
+// }
+// .content span:nth-child(3){
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 3px;
+//   background:linear-gradient(to left, #0c002b, #1779ff);
+// }
+// .content span:nth-child(4){
+//   left: 0;
+//   bottom: 0;
+//   width: 3px;
+//   height: 100%;
+//   background:linear-gradient(to top, #0c002b, #1779ff);
+// }
+
+.alerta{ 
+  background:linear-gradient($gradient1,$gradient2) !important;
+  border-radius: 15px;
+  font-size: 12px;
+}
+.form-check-input:checked {
+  background-color: $brillante !important;
+  border-color: $brillante !important;
+}
+.form-check-input:focus{
+  box-shadow: 0 0 0 0.25rem rgba($color: $brillante, $alpha: .25);
+}
+
+
+
+/* ------------------------
+* Seccion de Recibo
+--------------------------- */
+
+.detalle-upload{
+  z-index: 5;
+  width: 100%;
+}
+::-webkit-file-upload-button{
+  color: white;
+  background:linear-gradient($gradient1,$gradient2) !important;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+
+
+
+.btn-primario:hover{
+  color: white;
+  background: $brillante;
+  background: linear-gradient(to right, $brillante, $brillante2);
+}
+
+.btn-primario{
+  background: $brillante;
+  background: linear-gradient(to right, $buttongradiante1, $buttongradiante2);
+  color: white;
+}
+.btn-secundario{
+  background: rgb(15,228,174);
+  
+  background: linear-gradient(90deg, rgba(15,228,174,1) 0%, rgba(45,113,134,1) 50%, rgba(68,27,103,1) 100%);
+  color: white;
+  transition: all .3s ease;
+}
+.btn-secundario:hover{
+  background: rgb(15,228,174);
+  background: linear-gradient(90deg, rgba(15,228,174,1) 0%, rgba(45,113,134,1) 40%, rgba(68,27,103,1) 100%);
+  color: white;
+}
+
+
+/* ----------------------
+* Estilos de las tablas
+----------------------- */
+table{
+  th, td {
+    padding:15px 20px;
+    
+  }
+  tbody{
+    border: none !important;
+  }
+}
+.table{
+  margin-bottom: 0.5rem;
+}
+
+
+tr{
+  background: linear-gradient(to right, #662f8e, #33b7ea);
+  border:none;
+  color: white;
+  margin-bottom: 2px;
+  border-top: 10px solid black;
+}
+tr:hover, tr:hover tbody{
+  color: white;
+  background-color: $gradient1 !important;
+}
+
+//* Estilos para el data Table
+
+.dataTables_wrapper{
+  padding: .5rem 0;
+}
+
+table.dataTable{
+  border-collapse: collapse !important;
+}
+table.dataTable>tbody>tr {
+  background-color: #15152f;
+}
+
+.dataTables_paginate span{
+  padding: 0px 5px;
+  cursor: pointer;
+}
+.dataTables_paginate span a{
+  padding: 5px;
+  background: $gradient2;
+  color: white;
+  margin: 0px 5px;
+  border-radius: 5px;
+  font-size: 8px;
+  text-decoration: none;
+}
+.dataTables_paginate .previous,
+.dataTables_paginate .next{
+  background: $gradient2;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dataTables_wrapper .dataTables_length select{
+  background: $gradient2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0 3px;
+  outline: none;
+}
+.dataTables_wrapper .dataTables_length select option{
+  border: none;
+}
+.dataTables_wrapper .dataTables_length select:hover,
+.dataTables_wrapper .dataTables_length select:focus,
+.dataTables_paginate .previous:hover,
+.dataTables_paginate .next:hover,
+.dataTables_paginate span a:hover{
+  background: $gradient1;
+}
+.dataTables_wrapper .dataTables_filter input{
+  margin-top: 10px;
+  background: $gradient2;
+  border: none;
+  padding: 3px 5px;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.dataTables_wrapper .dataTables_filter input:focus,
+.dataTables_wrapper .dataTables_filter input:hover{
+  border: none;
+  background: $gradient1;
+}
+table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td, table.dataTable tbody td,table.dataTable tbody th {
+  text-align: left !important;
+}
+
+
+
+thead tr{
+  background: linear-gradient(to right,  #bd2625, #faaa1b) !important;
+}
+th{
+  white-space: nowrap;
+}
+
+
+/* ----------------------------
+*Seccion de facturas
+---------------------------- */
+
+.badge-primario{
+  background: linear-gradient(to right, #5e0a2e, $gradient2);
+  color: white;
+}
+.badge-secundario{
+  background: linear-gradient(to right, $buttongradiante1, $buttongradiante2);
+  color: white;
+}
+.badge-pagado{
+  background: linear-gradient(to right, $badgeGradiante1, $badgeGradiante2);
+  color: white;
+}
+
+/* *Seccion home 2  */
+
+.style-content{
+  border-radius: 50px 10px 10px 10px !important;
+}
+.style-content::after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: black;
+  border-radius: 46px 8px 8px 8px !important;
+}
+
+
+
+
+// * seccion de fomrs
+
+.body-form{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#login{
+  /*background: url('../images/back_principal.png') center center /cover;
+  background-attachment: fixed;*/
+}
+// .input-content{
+//   position: relative;
+// }
+
+// .inputsito{
+//   width: 100%;
+//   background-color: transparent;
+//   color: white;
+//   border: none;
+//   border-bottom: 2px solid rgba($color: silver, $alpha: .3);
+// }
+// .input-content .labelsito{
+//   position: absolute;
+//   left: 0;
+//   bottom: 10px;
+//   pointer-events: none;
+// }
+
+// .input-content .inputsito:valid ~ .labelsito,
+// .input-content .inputsito:focus ~ .labelsito{
+//   transform: translateY(-20px);
+// }
+
+.form-control{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid rgba($color: silver, $alpha: .3);
+  }
+.inputsito{
+  width: 100%;
+  position: relative;
+}
+.form-label{
+  position: absolute;
+  left: 8px;
+  bottom: 0px;
+  color: grey;
+  font-size: 17px;
+  pointer-events: none;
+  transition: all .3s ease;
+}
+.form-control:valid,
+.form-control:focus{
+  background-color: transparent !important;
+  border-bottom: 2px solid $brillante;
+  color: white;
+}
+.form-control:valid ~ .form-label,
+.form-control:focus ~ .form-label {
+  transform: translate(-5px,-22px);
+  font-size: 12px;
+  color: $brillante;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: transparent !important;
+  border-bottom: 2px solid $brillante;
+  color: white;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+// Seccion de backOfice
+.linea{
+  margin-right: 0;
+  width: 75%;
+  height: 2px;
+  background: linear-gradient(to right, black, $badgeGradiante2);
+  margin: 0 0 0 auto;
+}
+.colorIcon{
+  background: linear-gradient(to right, $badgeGradiante2, $badgeGradiante1);
+  -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+.verIcon {
+  margin: 0;
+  font-size: 6rem;
+  padding: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.verIcon i{ 
+	background:-moz-linear-gradient(to bottom, #bd2625,#faaa1b); 
+    background: -webkit-linear-gradient(to bottom, #bd2625,#faaa1b); 
+    background: linear-gradient(to right, #bd2625,#faaa1b);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color:transparent;
+  }
+// .way_icon .mdi::before{
+//   font-size: 6rem !important;
+//   line-height: 0;
+// }
+.verIcon .mdi::before{
+  font-size: 6rem;
+}
+.direcciones li a{
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+// Seccion de planes
+.planes .mdi::before{
+  line-height: normal !important;
+}
+.planes .divider{
+  width: 100%;
+  height: 1px;
+  background:linear-gradient(to right, $badgeGradiante1, $badgeGradiante2);
+  opacity: .3;
+  margin-bottom: .5rem;
+}
+.planes .plan.content::after{
+  background: #5e0a2e !important;
+}
+.resaltado{
+  position: absolute;
+  z-index: 12;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  background: linear-gradient(to right, $brillante, $brillante2);
+  border-radius: 10px;
+  width: 50%;
+  color: white;
+  box-shadow: 0 0 5px 5px rgba($color: silver, $alpha: .2);
+}
+
+.tickets .mdi::before{
+  line-height: normal;
+  font-size: 12px;
+}
+
+
+// Seccion de la Red
+.boc-light{
+  background-color: transparent !important;
+  z-index: 1;
+}
+.boc-search{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+ *Seccion del slider 
+-------------------------------- */
+
+.swiper-button-next {
+  color: black;
+}
+
+// #animacion {
+//   min-height: 50vh;
+// }
+.swiper-slide {
+  height: 40rem;
+  text-align: center;
+  color: $text-primary;
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide .container {
+  z-index: 10;
+}
+
+.swiper-button-prev::after {
+  content: "\F0156";
+  font-family: "Material Design Icons";
+}
+
+.swiper-pagination-bullet {
+  width: 0.7rem;
+  height: 0.7rem;
+  background: $text-primary;
+  margin: 0 0.6rem !important;
+  outline: 0;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  width: 1rem;
+  height: 1rem;
+  background: $principal;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  // font-size: 2.5rem;
+  line-height: 1.3;
+}
+.subheading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $principal;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 990px) {
+  .swiper-slide::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.8)
+    );
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+/* ------------
+* Seccion de Servicios
+--------------- */
+
+.contenido {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  color: $text-primary;
+  // width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.content-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $primary-color;
+  width: 6rem;
+  height: 6rem;
+  background: linear-gradient(to right, $gradient1 0%, $gradient2 100%);
+}
+
+.content-icon .mdi::before {
+  font-size: 3rem;
+  line-height: normal;
+}
+
+.contenido:hover {
+  color: $primary-color;
+  background: $principal;
+  box-shadow: 0px 0px 14px 0px rgba(77, 82, 94, 0.15);
+}
+.contenido:hover .content-icon {
+  color: $principal;
+  background: $primary-color;
+}
+
+.icon-box {
+  position: absolute;
+  top: 15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $primary-color;
+  opacity: 0;
+}
+.icon-box .mdi::before {
+  font-size: 30rem;
+}
+
+.contenido:hover .icon-box {
+  opacity: 0.2;
+}
+
+.btn.btn-large {
+  width: 15rem;
+}
+
+/* -----------------------
+* Seccion de eligenos
+------------------------- */
+.eligenos .informacion {
+  position: relative;
+}
+
+.eligenos .informacion span {
+  top: 1rem;
+  left: 0.3rem;
+  position: absolute;
+  border-top: 0.5px ridge $secondary;
+  width: 2.2rem;
+}
+
+/* -----------------
+ * Seccion de estadisticas
+----------------- */
+
+.estadisticas .wrap-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.estadisticas .wrap-circle::before,
+.estadisticas .wrap-circle::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to right, $gradient1 0%, $gradient2 100%);
+  box-shadow: 2px 4px 20px 1px rgba(45, 45, 45, 0.13);
+  border-radius: 50%;
+}
+
+.estadisticas .wrap-circle::before {
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+}
+.estadisticas .wrap-circle::after {
+  top: 6rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.estadisticas .circulo {
+  position: relative;
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+}
+
+.estadisticas .detalle-est {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-color;
+  border-radius: 50%;
+  box-shadow: 2px 4px 20px 1px rgba(45, 45, 45, 0.13);
+  z-index: 1;
+}
+
+.display-0 {
+  margin-bottom: -1rem;
+}
+
+.estadisticas .fondo-circle {
+  position: absolute;
+  left: -4.3rem;
+  top: -1.25rem;
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 1.5rem);
+  background: $principal;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.estadisticas .fondo-circle::before,
+.estadisticas .fondo-circle::after {
+  content: "";
+  position: absolute;
+  bottom: -4rem;
+  width: 14rem;
+  height: 14rem;
+  background-color: $primary-color;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.estadisticas .fondo-circle::before {
+  left: -1.75rem;
+  opacity: 0.1;
+}
+.estadisticas .fondo-circle::after {
+  left: 2rem;
+  opacity: 0.15;
+}
+
+@media (max-width: 990px) {
+  .estadisticas .circulo {
+    width: 16rem;
+    height: 16rem;
+  }
+  .display-0 {
+    margin-bottom: 0.2rem;
+  }
+}
